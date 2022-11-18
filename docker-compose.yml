@@ -1,0 +1,17 @@
+version: '2'
+services:
+  app:
+    build: .
+    command: bash -c "python mongoDB.py && python app.py"
+    # command: python app.py
+    ports:
+      - "5050:5000"
+    volumes:
+      - .:/app
+    links:
+      - mongodb
+  
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
