@@ -149,3 +149,4 @@ if __name__ == "__main__":
     json_format = {'data': house_detail_list}   
     with open(os.path.join('data', 'new_taipei_city_houses.json'), 'w') as f:
         json.dump(json_format, f)
+        
